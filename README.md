@@ -6,6 +6,7 @@
 
 # Usando Python
 * [x] [Python](https://www.python.org/) 
+
 ## Python:
  ![GitHub](/img/python-logo.png)
  
