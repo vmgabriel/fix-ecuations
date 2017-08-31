@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 import sys
 sys.path.append("../lib/")
 #Para librerias que se encuentren en el directorio padre
