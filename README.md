@@ -1,8 +1,8 @@
 # Integrantes del Grupo
     
-* [x] Carlos Andrés Aguirre Cañas
-* [x] Dalia Muñoz Araque
-* [x] Gabriel Vargas Monroy
+* Carlos Andrés Aguirre Cañas
+* Dalia Muñoz Araque
+* Gabriel Vargas Monroy
 
 # Arboles Binarios Aritmeticos en Python
     Este repositorio abarca ejercicios de aplicación de datos como Arboles binarios en el lenguaje de programación Python.
@@ -44,6 +44,4 @@ class evaluarExpresion:
         if arbol.valor=="/":
             return self.evaluar(arbol.izq)/self.evaluar(arbol.der)
         return int(arbol.valor)
-
-
-```	
+```
