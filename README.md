@@ -45,3 +45,8 @@ class evaluarExpresion:
             return self.evaluar(arbol.izq)/self.evaluar(arbol.der)
         return int(arbol.valor)
 ```
+
+# Documentación
+Enfocado en la documentacion utilizando **DOCSTRING**, sin embargo, el propio **DOCSTRING** es ineficiente,
+asi que tambien aplicamos **EPYDOC** que es una herramienta que extiende la documentacion para que pueda
+quedar mas completa
