@@ -2,8 +2,8 @@
 
 # Ejercicio de construcción de arboles en PREORDEN.
 
-import pila
-from nodo import Nodo
+from lib.pila import Pila
+from lib.nodo import Nodo
 
 class preFijo(object):
 	def __init__(self):

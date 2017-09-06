@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 class Pila:
     """ Representa una pila con operaciones de apilar, desapilar y
         verificar si está vacía. """

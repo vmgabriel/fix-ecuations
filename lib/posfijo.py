@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from nodo import Nodo
-from pila import Pila
+from lib.nodo import Nodo
+from lib.pila import Pila
 
 #convertira de posfijo a arbol
 

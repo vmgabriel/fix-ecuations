@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from nodo import Nodo
+from lib.nodo import Nodo
 
 class evaluarExpresion:
     def __init__(self):
