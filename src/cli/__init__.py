@@ -10,13 +10,12 @@ Archivo para cli
 @contact: vmgabriel96@gmail.com
 """
 
-import sys
-sys.path.append("../lib/")
 #Para librerias que se encuentren en el directorio padre
 
-from lib.pila import Pila
-from lib.nodo import Nodo
-from lib import Funcionalidades
+from ..libs import Funcionalidades
+from ..libs.pila import Pila
+from ..libs.nodo import Nodo
+from ..libs.cola import Cola
 
 class Cli(object):
     """
@@ -111,7 +110,7 @@ class Cli(object):
     def construirArreglo(self):
         """
         Metodo para construir en base a un arreglo, teniendo los datos que el
-        usuario desee.::
+        usuario desee::
 
                 [ A B C D ] <---Agregar
 
