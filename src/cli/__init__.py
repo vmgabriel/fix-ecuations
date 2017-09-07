@@ -16,9 +16,6 @@ sys.path.append("../lib/")
 
 from lib.pila import Pila
 from lib.nodo import Nodo
-from lib.posfijo import posFijo
-from lib.prefijo import preFijo
-#from evaluar import evaluarExpresion
 
 class Cli(object):
     """
@@ -46,7 +43,7 @@ class Cli(object):
         """
         Metodo del menu principal, enfocado en mostrar un menu para quedar
         el usuario seleccione con la entrada, en este caso el menu muestra las
-        siguientes opciones:
+        siguientes opciones::
 
             1. Ingresar Ecuaciones: Enfocado en resolver ecuaciones I{X} por I{X}
             2. Evaluar arbol: Enfocado en resolver un arbol previamente guardado
@@ -82,14 +79,14 @@ class Cli(object):
 
     def construirPila(self):
         """
-        Metodo para construir Pila, siendo pila un esquema LIFO
+        Metodo para construir Pila, siendo pila un esquema LIFO::
 
-        .....* 1 * <-- Apilar  // ---> Desapilar el primero
-        .....* 2 *
-        .....* 3 *
-        .....* 4 *
-        .....* 5 *
-        .....*****
+             * 1 * <-- Apilar  // ---> Desapilar el primero
+             * 2 *
+             * 3 *
+             * 4 *
+             * 5 *
+             *****
 
         @return: Pila de datos insertados por el usuario está en B{lib/pila.py}
         @rtype: Pila()
@@ -111,9 +108,9 @@ class Cli(object):
     def construirArreglo(self):
         """
         Metodo para construir en base a un arreglo, teniendo los datos que el
-        usuario desee.
+        usuario desee.::
 
-        .........[ A B C D ] <---Agregar
+                [ A B C D ] <---Agregar
 
         @return: Un arreglo de tipo str
         @rtype: str[]
@@ -141,11 +138,11 @@ class Cli(object):
 
     def imprimirResultado(self, arbol):
         """
-        Metodo enfocado en imprimir Resultado de la solucion del arbol, vease la documentacion
+        Metodo enfocado en imprimir Resultado de la solucion del arbol, vease la documentacion::
 
-        ...........(+)          (4+3)   +   (7-5)
-        .......(+)     (-)        7     +     2
-        .....(4) (3) (7) (5)            9  <--------Imprime este resultado
+                   (+)          (4+3)   +   (7-5)
+               (+)     (-)        7     +     2
+             (4) (3) (7) (5)            9  <--------Imprime este resultado
 
         @param arbol: arbol que se va a resolver
         @type arbol: Nodo()
@@ -169,12 +166,11 @@ class Cli(object):
                      print ("Ecuacion "+str(y+1))
                      self.separador()
                      arreglotemp=self.construirArreglo()
+                     func=Funcionalidades()
                      if (self.posicion()==1):
-                         pre=preFijo()
-                         self.arboles.append(pre.construirPre(arreglotemp))
+                         self.arboles.append(func.convertirPre(arreglotemp))
                      else:
-                         pos=posFijo()
-                         self.arboles.append(pos.convertirPos(arreglotemp))
+                         self.arboles.append(func.convertirPos(arreglotemp))
                      print ("Hecho Correctamente")
              elif (x == 2):
                  if not(self.arboles == []):

@@ -108,7 +108,7 @@ object --+
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="encolar"></a><span class="summary-sig-name">encolar</span>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="src.lib.cola.Cola-class.html#encolar" class="summary-sig-name">encolar</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">x</span>)</span><br />
       Agrega el elemento x a la cola.</td>
           <td align="right" valign="top">
@@ -139,11 +139,11 @@ object --+
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
+      <span class="summary-type">bool</span>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="es_vacia"></a><span class="summary-sig-name">es_vacia</span>(<span class="summary-sig-arg">self</span>)</span><br />
+          <td><span class="summary-sig"><a href="src.lib.cola.Cola-class.html#es_vacia" class="summary-sig-name">es_vacia</a>(<span class="summary-sig-arg">self</span>)</span><br />
       Devuelve True si la lista est&#225; vac&#237;a, False si no.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="src.lib.cola-pysrc.html#Cola.es_vacia">source&nbsp;code</a></span>
@@ -156,11 +156,11 @@ object --+
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
+      <span class="summary-type">int</span>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="cantidad"></a><span class="summary-sig-name">cantidad</span>(<span class="summary-sig-arg">self</span>)</span><br />
+          <td><span class="summary-sig"><a href="src.lib.cola.Cola-class.html#cantidad" class="summary-sig-name">cantidad</a>(<span class="summary-sig-arg">self</span>)</span><br />
       Returna la cantidad de datos en la cola.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="src.lib.cola-pysrc.html#Cola.cantidad">source&nbsp;code</a></span>
@@ -256,6 +256,30 @@ object --+
   </dl>
 </td></tr></table>
 </div>
+<a name="encolar"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">encolar</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.lib.cola-pysrc.html#Cola.encolar">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Agrega el elemento x a la cola.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>x</code></strong> - Elemento a encolar</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
 <a name="desencolar"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -273,6 +297,50 @@ object --+
   <p>Devuelve el elemento inicial y lo elimina de la cola. Si la cola est&#225; 
   vac&#237;a levanta una excepci&#243;n.</p>
   <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>Dato desencolado, el inicial</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="es_vacia"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">es_vacia</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.lib.cola-pysrc.html#Cola.es_vacia">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Devuelve True si la lista est&#225; vac&#237;a, False si no.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>True si est&#225; vacio</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="cantidad"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">cantidad</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.lib.cola-pysrc.html#Cola.cantidad">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returna la cantidad de datos en la cola.</p>
+  <dl class="fields">
+    <dt>Returns: int</dt>
+        <dd>Cantidad de datos en la cola</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -303,7 +371,7 @@ object --+
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Wed Sep  6 17:49:21 2017
+    Generated by Epydoc 3.0.1 on Wed Sep  6 19:06:09 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
