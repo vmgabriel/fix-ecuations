@@ -16,6 +16,7 @@ sys.path.append("../lib/")
 
 from lib.pila import Pila
 from lib.nodo import Nodo
+from lib import Funcionalidades
 
 class Cli(object):
     """
@@ -47,7 +48,8 @@ class Cli(object):
 
             1. Ingresar Ecuaciones: Enfocado en resolver ecuaciones I{X} por I{X}
             2. Evaluar arbol: Enfocado en resolver un arbol previamente guardado
-            3. Salir: Da fin al programa.
+            3. Imprimir arbol PosOrden: Imprime en metodo posOrden
+            4. Salir: Da fin al programa.
 
         @return: valor numero de seleccion del usuario
         @rtype: int
@@ -55,7 +57,8 @@ class Cli(object):
         self.separador()
         print ("1. Ingresar Ecuaciones")
         print ("2. Evaluar el arbol")
-        print ("3. Salir")
+        print ("3. Imprimir arbol PosOrden")
+        print ("4. Salir")
         print("Que desea hacer?:")
         return int(input())
 
@@ -129,6 +132,22 @@ class Cli(object):
             desea ingresar siendo 1. si y 2. no"""
         return arreglo
 
+    def imprimirPosOrden(self,arbol):
+        """
+        Imprime en B{POSORDEN}::
+
+                   (=)
+               (+)     (-)
+             (1) (2) (3) (4)  <-----La impresion resultaria [ 1 2 + 3 4 - = ]
+
+        @param arbol: Arbol que se va a mostrar como posOrden
+        @type arbol: Nodo()
+        """
+        if (arbol!=None):
+            self.imprimirPosOrden(arbol.izq)
+            self.imprimirPosOrden(arbol.der)
+            print (arbol.valor+" ")
+
     def salida(self):
         """Metodo centrado en darle fin al usuario, usa I{separador()}, si llega aqui su salida
             es satisfactoria"""
@@ -157,24 +176,27 @@ class Cli(object):
         Metodo principal, correra el ciclo principal al usuario y adherida todas las funciones del Cli()
         """
         while (self.seguir):
-             x = self.menu()
-             if (x == 1):
-                 print ("Ingrese la cantidad de ecuaciones: ")
-                 cant=int(input())
-                 for y in range(0,cant):
-                     self.separador()
-                     print ("Ecuacion "+str(y+1))
-                     self.separador()
-                     arreglotemp=self.construirArreglo()
-                     func=Funcionalidades()
-                     if (self.posicion()==1):
-                         self.arboles.append(func.convertirPre(arreglotemp))
-                     else:
-                         self.arboles.append(func.convertirPos(arreglotemp))
-                     print ("Hecho Correctamente")
-             elif (x == 2):
-                 if not(self.arboles == []):
-                     self.imprimirResultado(self.arboles[0])
-             else:
+            x = self.menu()
+            if (x == 1):
+                print ("Ingrese la cantidad de ecuaciones: ")
+                cant=int(input())
+                for y in range(0,cant):
+                    self.separador()
+                    print ("Ecuacion "+str(y+1))
+                    self.separador()
+                    arreglotemp=self.construirArreglo()
+                    print (arreglotemp)
+                    func=Funcionalidades()
+                    if (self.posicion()==1):
+                        self.arboles.append(func.convertirPre(arreglotemp))
+                    else:
+                        self.arboles.append(func.convertirPos(arreglotemp))
+                    print ("Hecho Correctamente")
+            elif (x == 2):
+                if not(self.arboles == []):
+                    self.imprimirResultado(self.arboles[0])
+            elif (x == 3):
+                self.imprimirPosOrden(self.arboles[0])
+            else:
                 self.seguir = False
         self.salida()
