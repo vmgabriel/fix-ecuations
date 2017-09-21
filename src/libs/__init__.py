@@ -1,9 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from pila import Pila
-from nodo import Nodo
-from cola import Cola
+#from pila import Pila
+#from nodo import Nodo
+#from cola import Cola
+
+from libs.pila import Pila
+from libs.nodo import Nodo
+from libs.cola import Cola
 
 """
 Archivo basico de lib, tiene las propiedades de ser la fechaada de B{LIB}
@@ -75,7 +79,6 @@ class Funcionalidades:
                 dato2=expresion.pop(contador-2)
                 contador-=2
                 expresion[contador]=Nodo(expresion[contador],dato2,dato1)
-                print(expresion)
             else:
                 expresion[contador]=Nodo(expresion[contador],None,None)
             contador+=1
@@ -126,10 +129,10 @@ class Funcionalidades:
         @rtype: bool
         """
         if (arbol == None):
-            return false;
+            return False;
         if (arbol.valor == letra):
-            return true;
-        return LetraDerecha(arbol.izq,letra) or LetraDerecha(arbol.der,letra)
+            return True;
+        return self.letraEsta(arbol.izq,letra) or self.letraEsta(arbol.der,letra)
 
     def convertir(self,nodo):
         """
@@ -175,9 +178,9 @@ class Funcionalidades:
                       (=)      Resuelve Despejando A
                   (+)     (*)                  ____(=)____
                 (A) (3) (5) (6)               (A)        (-)
-                                                      (+)   (3)
+                                                      (*)   (3)
                                                     (5) (6)
-                En este caso siendo A=(5+6)-3
+                En este caso siendo A=(5*6)-3
         Notese la forma en la que se resuelve
 
         @param arbol: Arbol que se va a desejar, se va a alterar
@@ -191,7 +194,7 @@ class Funcionalidades:
             #Esta en el lado derecho
             if (arbol.der.valor==letra):
                 return arbol
-            if (self.letraEsta(arbol.der.der),letra):
+            if (self.letraEsta(arbol.der.der,letra)):
                 #Lado derecho a la derecha
                 arboltemp=None
                 if (arbol.der.valor=="+" or arbol.der.valor=="*"):

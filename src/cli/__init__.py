@@ -11,11 +11,13 @@ Archivo para cli
 """
 
 #Para librerias que se encuentren en el directorio padre
+import sys
+sys.path.insert(0, '../')
 
-from ..libs import Funcionalidades
-from ..libs.pila import Pila
-from ..libs.nodo import Nodo
-from ..libs.cola import Cola
+from libs import Funcionalidades
+from libs.pila import Pila
+from libs.nodo import Nodo
+from libs.cola import Cola
 
 class Cli(object):
     """
@@ -190,6 +192,10 @@ class Cli(object):
                         self.arboles.append(func.convertirPre(arreglotemp))
                     else:
                         self.arboles.append(func.convertirPos(arreglotemp))
+                    print ("Hecho Correctamente")
+                    print ("Despejando A...")
+                    input()
+                    self.arboles[0]=func.despejar(self.arboles[0],"A")
                     print ("Hecho Correctamente")
             elif (x == 2):
                 if not(self.arboles == []):
