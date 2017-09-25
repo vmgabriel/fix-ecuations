@@ -15,6 +15,7 @@ import sys
 sys.path.insert(0, '../')
 
 from libs import Funcionalidades
+from libs.ecuaciones import ArbolPosFijo
 from libs.pila import Pila
 from libs.nodo import Nodo
 from libs.cola import Cola
@@ -176,32 +177,16 @@ class Cli(object):
         """
         Metodo principal, correra el ciclo principal al usuario y adherida todas las funciones del Cli()
         """
-        while (self.seguir):
-            x = self.menu()
-            if (x == 1):
-                print ("Ingrese la cantidad de ecuaciones: ")
-                cant=int(input())
-                for y in range(0,cant):
-                    self.separador()
-                    print ("Ecuacion "+str(y+1))
-                    self.separador()
-                    arreglotemp=self.construirArreglo()
-                    print (arreglotemp)
-                    func=Funcionalidades()
-                    if (self.posicion()==1):
-                        self.arboles.append(func.convertirPre(arreglotemp))
-                    else:
-                        self.arboles.append(func.convertirPos(arreglotemp))
-                    print ("Hecho Correctamente")
-                    print ("Despejando A...")
-                    input()
-                    self.arboles[0]=func.despejar(self.arboles[0],"A")
-                    print ("Hecho Correctamente")
-            elif (x == 2):
-                if not(self.arboles == []):
-                    self.imprimirResultado(self.arboles[0])
-            elif (x == 3):
-                self.imprimirPosOrden(self.arboles[0])
-            else:
-                self.seguir = False
+        obj = ArbolPosFijo()
+        print("Ingrese la o las ecuaciones:")
+        while True:
+            expresion = input().split()
+            if not expresion:
+                print(" ==========  Resultado ==========  ")
+                obj.printDiccionario()
+                break
+            obj.construirPosfijoTabla(expresion)
+            obj.construirPosfijo(expresion)
+        print("-------Tipos de Datos Ingresados--------")
+        obj.printListaTipo()
         self.salida()

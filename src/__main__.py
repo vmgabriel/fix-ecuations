@@ -11,15 +11,7 @@ Archivo para Metodo principal
 """
 
 from cli import Cli
-from libs.ecuaciones import ArbolPosFijo
 
-# Ejercicio:
-obj = ArbolPosFijo()
-print("INGRESE LA O LAS ECUACIONES:")
-while True:
-    expresion = input().split()
-    if not expresion:
-        print(" ==========  RESULTADO ==========  ")
-        obj.printDiccionario()
-        break
-    obj.construirPosfijo(expresion)
+if __name__ == "__main__":
+    interfaz=Cli()
+    interfaz.run()
