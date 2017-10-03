@@ -11,7 +11,36 @@ Archivo para Metodo principal
 """
 
 from cli import Cli
+from libs.ecuaciones import ArbolPosFijo
 
 if __name__ == "__main__":
-    interfaz=Cli()
-    interfaz.run()
+    # Ejercicio solucionar ecuaciones:
+        #obj = ArbolPosFijo()
+        #print("INGRESE LA O LAS ECUACIONES:")
+        #while True:
+        #    expresion = raw_input().split()
+        #    if not expresion:
+        #        print(" ==========  RESULTADO ==========  ")
+        #        obj.printDiccionario()
+        #        break
+        #    obj.construirPosfijo(expresion)
+        # ====================================================================
+
+        # Ejercicio evaluar Tokens
+        obj = ArbolPosFijo()
+        error=0
+        listaTipo = []
+        listaValor = []
+        print("INGRESE LA O LAS ECUACIONES:")
+        while True:
+            expresion = raw_input().split()
+            if not expresion:
+                print(" ==========  RESULTADO ==========  ")
+                obj.printDiccionario()
+                #obj.imprimirTabla(listaTipo,listaValor)
+                break
+            print (' '.join(expresion))
+            error=obj.evaluarCaracteres(expresion, listaTipo, listaValor)
+            if(error==0):
+                print ("El valor resultado es: "+ str(obj.construirPosfijo(expresion)))
+                obj.imprimirTabla(listaTipo,listaValor)
